@@ -1,5 +1,5 @@
-.vscode/*
-.vscode/workspace.code-workspace
+.vscode/
+.code-workspace
 
 ##############################
 ## Java

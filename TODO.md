@@ -1,0 +1,9 @@
+- Database connection
+- Life count
+- Team system
+    - Database connection
+    - Store Teams
+    - Read at server start
+    - Make team
+    - Manage members
+- Discord Bot Integration

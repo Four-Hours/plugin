@@ -14,10 +14,10 @@ public class App extends JavaPlugin {
     private Logger logger;
 
     // Constructor
-    public App() {
-        configFile = getConfig();
-        logger = getLogger();
-    }
+    // public App() {
+    //     configFile = getConfig();
+    //     logger = getLogger();
+    // }
 
     @Override
     public void onEnable() {

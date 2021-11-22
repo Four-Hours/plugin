@@ -7,5 +7,8 @@
     - Read at server start
     - Make team
     - Manage members
+- Boogy Man
+- Time keeping
 - Discord Bot Integration
 - I AM THE BOOGEY
+- Write README.md

@@ -1,11 +1,11 @@
 - Database connection
 - Life count
+    - Different colors for different life numbers
 - Team system
     - Database connection
     - Store Teams
     - Read at server start
     - Make team
     - Manage members
-- Boogie man
-- Time Keeping
 - Discord Bot Integration
+- I AM THE BOOGEY

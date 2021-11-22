@@ -6,4 +6,6 @@
     - Read at server start
     - Make team
     - Manage members
+- Boogie man
+- Time Keeping
 - Discord Bot Integration

@@ -1,6 +1,6 @@
 - Database connection
 - Life count
-    - Different colors for different life numbers
+    - Different colors for different life values
 - Team system
     - Database connection
     - Store Teams

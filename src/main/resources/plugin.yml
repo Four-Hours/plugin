@@ -1,3 +1,6 @@
 main: com.bouwerbytes.fourhours.App
 name: FourHours
 version: 0.1-SNAPSHOT
+api-version: 1.17
+authors: [Dylan, Tanner, Hiwaffles]
+description: Plugin for Four Hours MC server

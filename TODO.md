@@ -12,3 +12,5 @@
 - Discord Bot Integration
 - I AM THE BOOGEY
 - Write README.md
+- Config class
+- Specify Spigot api version

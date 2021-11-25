@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import org.bukkit.configuration.file.FileConfiguration;
 
 // TODO Figure out how connecting and var storage works
+// TODO add update method
 public class Database {
 
     private Connection conn;

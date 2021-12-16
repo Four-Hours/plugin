@@ -13,3 +13,4 @@
 - I AM THE BOOGEY
 - Write README.md
 - Config class
+- Unsure if we need spigot to be shaded into jar

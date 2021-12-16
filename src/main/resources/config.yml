@@ -1,6 +1,6 @@
 MySQL:
-  IP: localhost
-  DB-Name: FourHours
-  Username: root
+  Host: localhost
+  DB-Name: fourhours
+  Username: fourhoursuser
   Password: password
   Port: 3306

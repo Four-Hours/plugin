@@ -10,7 +10,7 @@ public class Life {
     private Database db;
 
     public Life() {
-        db = new Database();
+
     }
     
     //TODO Add database connection

@@ -11,13 +11,17 @@ public class App extends JavaPlugin {
 
     // Constructor
     public App() {
-        configFile = getConfig();
-        logger = getLogger();
+        //configFile = getConfig();
     }
 
     public void onEnable() {
+        logger = getLogger();
         getLogger().info("Hello, SpigotMC!");
         saveDefaultConfig();
+        configFile = getConfig();
+
+        info("About to load db");
+        Database db = new Database(configFile, logger);
     }
 
     @Override
@@ -25,7 +29,14 @@ public class App extends JavaPlugin {
         getLogger().info("See you again, SpigotMC!");
     }
     
+    public void info(String msg) {
+        getLogger().info(msg);
+    }
+
+    public void warn(String msg) {
+        getLogger().warning(msg);
+    }
+
     // Getters
-    public FileConfiguration getConfig() { return configFile; }
-    public Logger getLogger() { return logger; }
+    //public FileConfiguration getConfig() { return configFile; }
 }

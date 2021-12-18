@@ -19,7 +19,7 @@ public class Life {
         String table = "'Players'";
         String query = "SELECT "+ column +" FROM "+ table + " WHERE UUID = " + playerUUID;
         
-        ResultSet rs = db.Query(query);
+        ResultSet rs = db.query(query);
         rs.first();
         int oldLives = rs.getInt(1);
         int newLives = oldLives + add;

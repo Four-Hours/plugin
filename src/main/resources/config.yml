@@ -1,4 +1,4 @@
-MySQL:
+Database:
   Host: localhost
   DB-Name: fourhours
   Username: fourhoursuser

@@ -8,35 +8,22 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class App extends JavaPlugin {
     private FileConfiguration configFile;
     private Logger logger;
-
-    // Constructor
-    public App() {
-        //configFile = getConfig();
-    }
+    private Database db;
 
     public void onEnable() {
         logger = getLogger();
-        getLogger().info("Hello, SpigotMC!");
+        logger.info("Enabling FourHours");
+
         saveDefaultConfig();
         configFile = getConfig();
 
-        info("About to load db");
-        Database db = new Database(configFile, logger);
+        db = new Database(configFile, logger);
+        db.setup();
     }
 
     @Override
     public void onDisable() {
+        db.disconnect();
         getLogger().info("See you again, SpigotMC!");
     }
-    
-    public void info(String msg) {
-        getLogger().info(msg);
-    }
-
-    public void warn(String msg) {
-        getLogger().warning(msg);
-    }
-
-    // Getters
-    //public FileConfiguration getConfig() { return configFile; }
 }

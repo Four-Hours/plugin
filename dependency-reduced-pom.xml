@@ -75,6 +75,7 @@
     </repository>
   </repositories>
   <properties>
+    <org.springframework.version>5.2.8.RELEASE</org.springframework.version>
     <maven.compiler.target>17</maven.compiler.target>
     <maven.compiler.source>17</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,14 +1,16 @@
 package com.bouwerbytes.fourhours;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.UUID;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-//TODO Create specialized methods for each table
-//! If the commenting is too much lemme know, was having some fun but i can understand if it is distracting.
 public class Database {
 
     // **************************************************
@@ -32,7 +34,7 @@ public class Database {
     private String dbName;
 
     /**
-    * Constructor
+    * Class that handles all JDBC driving. Contains a large number of getters and setters for almost any need.
     *
     * @param config FileConfiguration of the main config file.
     * @param logger Logger to be used by the class.
@@ -43,54 +45,6 @@ public class Database {
         readConfig(config);
     }
     
-
-
-    // **************************************************
-    // * Private methods                                *
-    // **************************************************
-
-    private void readConfig(FileConfiguration config) {
-        // Reads relevant data from config file
-        host = config.getString("Database.Host");
-        port = config.getInt("Database.Port");
-        user = config.getString("Database.Username");
-        pass = config.getString("Database.Password");
-        dbName = config.getString("Database.DB-Name");
-    }
-
-    // Connects to the database specified in the config file.
-    private void connect() {
-        if(Stream.of(host, port, user, pass, dbName).allMatch(x -> x == null)) readConfig(config);
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName;
-        
-        try {
-            conn = DriverManager.getConnection(url, user, pass);
-            logger.info("Connected to DB succesfully");
-        } catch (SQLException e) {
-            //! Might be a good idea to do better error mitigation.
-            e.printStackTrace();
-        }
-
-    }
-
-    // Queries an int from the database, used by getters who return an int.
-    private int getInt(String sql) {
-        ResultSet rset = query(sql);
-        try {
-            if(rset.next()) {
-                return rset.getInt(1);
-            } else {
-                return -1;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
-
-    // Updates an int in the database, used by setters who update an int.
-    private int setInt(String sql) { return update(sql); }
-
 
 
     // **************************************************
@@ -277,4 +231,52 @@ public class Database {
     * @return 1 if update was successful, -1 if player not found or another issue occured.
     */
     public int setPlayerLastConnection(int time, UUID uuid) { return setInt("UPDATE players SET last_connection = " + time + " WHERE uuid = '" + uuid + "';"); }
+
+
+
+    // **************************************************
+    // * Private methods                                *
+    // **************************************************
+
+    private void readConfig(FileConfiguration config) {
+        // Reads relevant data from config file
+        host = config.getString("Database.Host");
+        port = config.getInt("Database.Port");
+        user = config.getString("Database.Username");
+        pass = config.getString("Database.Password");
+        dbName = config.getString("Database.DB-Name");
+    }
+
+    // Connects to the database specified in the config file.
+    private void connect() {
+        if(Stream.of(host, port, user, pass, dbName).allMatch(x -> x == null)) readConfig(config);
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName;
+        
+        try {
+            conn = DriverManager.getConnection(url, user, pass);
+            logger.info("Connected to DB succesfully");
+        } catch (SQLException e) {
+            //! Might be a good idea to do better error mitigation.
+            e.printStackTrace();
+        }
+
+    }
+
+    // Queries an int from the database, used by getters who return an int.
+    private int getInt(String sql) {
+        ResultSet rset = query(sql);
+        try {
+            if(rset.next()) {
+                return rset.getInt(1);
+            } else {
+                return -1;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    // Updates an int in the database, used by setters who update an int.
+    private int setInt(String sql) { return update(sql); }
 }

@@ -15,14 +15,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <org.springframework.version>5.2.8.RELEASE</org.springframework.version>
     </properties>
 
     <dependencies>
-
         <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>3.0.2-rc</version>
+            <groupId>com.cronutils</groupId>
+            <artifactId>cron-utils</artifactId>
+            <version>9.1.6</version>
         </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -48,6 +48,7 @@
                 </includes>
             </resource>
         </resources>
+        
         <plugins>
             <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
             <plugin>

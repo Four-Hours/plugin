@@ -4,3 +4,46 @@ Database:
   Username: fourhoursuser
   Password: password
   Port: 3306
+
+Time:
+  Enabled: true
+  KickMessage: "message"
+  Schedule:
+    - "* * * * * ?"
+  # Actions to execute N seconds before schedule.
+  # All fields are optional, you can choose what do you want at each step.
+  # Available fields:
+  # - chat [MESSAGE]
+  # - title [TITLE :: SUBTITLE :: FADE_IN_TICKS :: STAY_TICKS :: FADE_OUT_TICKS]
+  # - sound [SOUND_NAME]
+  # - command [CONSOLE_COMMAND]
+  # - whitelist [DEFAULT_STATUS (on/off)] (TOGGLES WHITELIST AT SCHEDULES)
+  Actions:
+    60:
+      - "chat | §7[§eServer§7] Close in §c1 minute"
+    30:
+      - "chat | §7[§eServer§7] Close in §c30 seconds"
+      - "title | §c-= §8[§eClose§8] §c=- :: §730 seconds left :: 40 40 40"
+    5:
+      - "chat | §7[§eServer§7] Close in §c5 seconds"
+      - "title | §c-= §8[§eClose§8] §c=- :: §75 seconds left :: 15 40 1"
+      - "sound | UI_BUTTON_CLICK"
+    4:
+      - "chat | §7[§eServer§7] Close in §c4 seconds"
+      - "title | §c-= §8[§eClose§8] §c=- :: §74 seconds left :: 15 40 1"
+      - "sound | UI_BUTTON_CLICK"
+    3:
+      - "chat | §7[§eServer§7] Close in §c3 seconds"
+      - "title | §c-= §8[§eClose§8] §c=- :: §73 seconds left :: 15 40 1"
+      - "sound | UI_BUTTON_CLICK"
+    2:
+      - "chat | §7[§eServer§7] Close in §c2 seconds"
+      - "title | §c-= §8[§eClose§8] §c=- :: §72 seconds left :: 15 40 1"
+      - "sound | UI_BUTTON_CLICK"
+    1:
+      - "chat | §7[§eServer§7] Close in §c1 second"
+      - "title | §c-= §8[§eClose§8] §c=- :: §71 second left :: 15 40 1"
+      - "sound | UI_BUTTON_CLICK"
+    0:
+      - "whitelist"
+  

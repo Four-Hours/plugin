@@ -1,0 +1,16 @@
+- Database connection
+- Life count
+    - Different colors for different life values
+- Team system
+    - Database connection
+    - Store Teams
+    - Read at server start
+    - Make team
+    - Manage members
+- Boogy Man
+- Time keeping
+- Discord Bot Integration
+- I AM THE BOOGEY
+- Write README.md
+- Config class
+- Unsure if we need spigot to be shaded into jar
